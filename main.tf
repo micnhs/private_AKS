@@ -99,6 +99,17 @@ resource "azurerm_kubernetes_cluster" "privateaks" {
     type = "SystemAssigned"
   }
 
+  role_based_access_control {
+    enabled = true
+
+    azure_active_directory {
+      client_app_id     = var.aad_client_AppID.value
+      server_app_id     = var.aad_server_AppID.value
+      server_app_secret = var.aad_server_secret.value
+      tenant_id         = var.aad_tenant_ID.value
+    }
+  }
+
   network_profile {
     docker_bridge_cidr = var.network_docker_bridge_cidr
     dns_service_ip     = var.network_dns_service_ip

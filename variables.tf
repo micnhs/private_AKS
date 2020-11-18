@@ -52,3 +52,21 @@ variable "network_service_cidr" {
   description = "CNI service cidr"
   default     = "10.2.0.0/24"
 }
+
+variable "aad_client_AppID" {
+  description = " AAD Server App ID"
+}
+
+variable "aad_server_AppID" {
+  description = " AAD Server App ID"
+}
+
+variable "aad_server_secret" {
+  description = "AAD server secret"
+}
+
+variable "aad_tenant_ID" {
+  description = "Tenant ID"
+}
+
+
